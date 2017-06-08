@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +14,18 @@ namespace Finance_Application
         private int months = 36;
         private float principal = 250000;
         private float r = 3.95f;
-        private double constant; 
+        private double constant;
 
         static void Main(string[] args)
         {
+            WindowsForms WindowTest = new WindowsForms();
+            WindowTest.Windows();
+            // RunFinanceApplication();
+        }
+
+        static void RunFinanceApplication()
+        {
+
             Processing Process = new Processing();
             Program Variables = new Program();
             PaymentInformation Information = new PaymentInformation();
@@ -24,11 +35,12 @@ namespace Finance_Application
             double[,] Array = Information.MonthlyPayments(Variables.months, constant, Variables.principal, rate);
             InformationOutput(Array);
             Console.ReadLine();
+
         }
 
-        static void InformationOutput (double[,] InformationArray)
+        static void InformationOutput(double[,] InformationArray)
         {
-            for (int i = 0; i < (InformationArray.Length / 4) ; i++)
+            for (int i = 0; i < (InformationArray.Length / 4); i++)
             {
                 Console.WriteLine("Total Due: {0:C2}, Paid to Interest: {1:C2}, Paid to Principal {2:C2}, End Balance: {3:C2}", InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3]);
             }
@@ -58,7 +70,7 @@ namespace Finance_Application
             return n;
         }
 
-        public double MaximumPrincipalAmount (double constant= 550, int months = 36 , float r = 1.095f)
+        public double MaximumPrincipalAmount(double constant = 550, int months = 36, float r = 1.095f)
         {
             // used to determine the maximum principal allowed given a constant monthly payment, constant months of payment, and constant rate. 
             double BaseValue = constant;
@@ -73,7 +85,7 @@ namespace Finance_Application
 
     class PaymentInformation
     {
-        public double[,] MonthlyPayments (int months, double constant, float principal, float r )
+        public double[,] MonthlyPayments(int months, double constant, float principal, float r)
         {
             double RunningTotal = principal; // to initialize the beginning total as the principal.
             double AccuredInterest;
@@ -94,7 +106,32 @@ namespace Finance_Application
                 a++;
             }
             return PaymentArry;
-            }
         }
-    
+    }
+
+    class WindowsForms : Form
+    {
+        public Button Button1;
+        public void Buttons ()
+        {
+            Button1.Size = new Size(40, 40);
+            Button1.Location = new Point(30, 30);
+            Button1.Text = "Click Me";
+            this.Controls.Add(Button1);
+            Button1.Click += new EventHandler(Button1_Click);
+
+        }
+
+        private void Button1_Click (object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello World");
+        }
+
+        public void Windows()
+        {
+            Application.EnableVisualStyles();
+            Application.Run(new WindowsForms());
+        }
+    }
 }
+    
