@@ -8,12 +8,20 @@ namespace Finance_Application
 {
     class Program
     {
+        private int months = 36;
+        private float principal = 250000;
+        private float r = 3.95f;
+        private double constant; 
+
         static void Main(string[] args)
         {
             Processing Process = new Processing();
+            Program Variables = new Program();
             PaymentInformation Information = new PaymentInformation();
-            double Constant = Process.DetermineConstant(36, 250000, 1.0395f);
-            double[,] Array = Information.MonthlyPayments(36, Constant, 250000, 1.0395f);
+            Cleanup CleanupRate = new Cleanup();
+            float rate = CleanupRate.CleanupInterestRate(Variables.r);
+            double constant = Process.DetermineConstant(Variables.months, Variables.principal, rate);
+            double[,] Array = Information.MonthlyPayments(Variables.months, constant, Variables.principal, rate);
             InformationOutput(Array);
             Console.ReadLine();
         }
@@ -22,10 +30,20 @@ namespace Finance_Application
         {
             for (int i = 0; i < (InformationArray.Length / 4) ; i++)
             {
-                Console.WriteLine("Total Due: {0}, Paid to Interest: {1}, Paid to Principal {2}, End Balance: {3}", InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3]);
+                Console.WriteLine("Total Due: {0:C2}, Paid to Interest: {1:C2}, Paid to Principal {2:C2}, End Balance: {3:C2}", InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3]);
             }
         }
     }
+
+    class Cleanup
+    {
+        public float CleanupInterestRate(float rate)
+        {
+            return (rate / 100) + 1;
+        }
+
+    }
+
     class Processing
     {
         public double DetermineConstant(int months = 36, float principal = 250000, float r = 1.0395f)
