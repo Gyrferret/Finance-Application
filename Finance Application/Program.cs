@@ -60,9 +60,28 @@ namespace Finance_Application
 
     class PaymentInformation
     {
-        public void MonthlyPayments (int months, double constant, float principal, float r )
+        public double[,] MonthlyPayments (int months, double constant, float principal, float r )
         {
-
+            double RunningTotal = principal; // to initialize the beginning total as the principal.
+            double AccuredInterest;
+            double InterestPaid;
+            double PrincipalPaid;
+            double[,] PaymentArry = new double[months, 4];
+            int a = 0;
+            for (int i = 1; i < months; i++)
+            {
+                AccuredInterest = (RunningTotal * r);
+                InterestPaid = AccuredInterest - RunningTotal;
+                PrincipalPaid = constant - InterestPaid;
+                RunningTotal = AccuredInterest - constant;
+                PaymentArry[a, 0] = AccuredInterest;
+                PaymentArry[a, 1] = InterestPaid;
+                PaymentArry[a, 2] = PrincipalPaid;
+                PaymentArry[a, 3] = RunningTotal;
+                a++;
+            }
+            return PaymentArry;
+            }
         }
-    }
+    
 }
