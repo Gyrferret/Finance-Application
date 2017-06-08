@@ -111,9 +111,10 @@ namespace Finance_Application
 
     class WindowsForms : Form
     {
-        public Button Button1;
-        public void Buttons ()
+        public WindowsForms()
         {
+            // method of the class needs to be the same name as the class itself.
+            Button Button1 = new Button();
             Button1.Size = new Size(40, 40);
             Button1.Location = new Point(30, 30);
             Button1.Text = "Click Me";
@@ -126,7 +127,7 @@ namespace Finance_Application
         {
             MessageBox.Show("Hello World");
         }
-
+        [STAThread]
         public void Windows()
         {
             Application.EnableVisualStyles();
