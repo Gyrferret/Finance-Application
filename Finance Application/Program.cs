@@ -57,4 +57,12 @@ namespace Finance_Application
             return p;
         }
     }
+
+    class PaymentInformation
+    {
+        public void MonthlyPayments (int months, double constant, float principal, float r )
+        {
+
+        }
+    }
 }
