@@ -6,17 +6,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// using Linq = System.Linq;
+// allows your to make reference aliases. 
 namespace Finance_Application
 {
-    class Program
+    public class Program
     {
         private int months = 36;
         private float principal = 250000;
         private float r = 3.95f;
         private double constant;
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // RunFinanceApplication();
         }
