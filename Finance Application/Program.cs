@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 // using Linq = System.Linq;
 // allows your to make reference aliases. 
 namespace Finance_Application
@@ -19,7 +20,8 @@ namespace Finance_Application
 
         public static void Main(string[] args)
         {
-            // RunFinanceApplication();
+            WindowsExperiments.WindowsForms Window = new WindowsExperiments.WindowsForms();
+            Window.Windows();
         }
 
         static void RunFinanceApplication()

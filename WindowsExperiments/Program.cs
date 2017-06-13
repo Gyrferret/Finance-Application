@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 
 namespace WindowsExperiments
 {
-    class Program
+    class WindowLauncher
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+
         }
 
     }
 
-    class WindowsForms : Form
+    public class WindowsForms : Form
     {
         public WindowsForms()
         {

@@ -51,6 +51,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WindowsExperiments\WindowsExperiments.csproj">
+      <Project>{bf21b896-bbf5-45af-ba71-a709f0047eb5}</Project>
+      <Name>WindowsExperiments</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
