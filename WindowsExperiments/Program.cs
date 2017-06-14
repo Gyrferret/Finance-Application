@@ -28,19 +28,43 @@ namespace WindowsExperiments
             Button1.Location = new Point(30, 30);
             Button1.Text = "Click Me";
             this.Controls.Add(Button1);
+            this.MouseClick += Mouse1_Click;
             Button1.Click += new EventHandler(Button1_Click);
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello World");
+            
         }
+
+        private void Mouse1_Click(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                MessageBox.Show("Click!");
+            }
+            
+        }
+
         [STAThread]
         public void Windows()
         {
             Application.EnableVisualStyles();
             Application.Run(new WindowsForms());
+
+        }
+    }
+
+    public class WindowsForm1 : Form
+    {
+        public WindowsForm1()
+        {
+            Button Button2 = new Button();
+            Button2.Size = new Size(40, 40);
+            Button2.Location = new Point(100, 100);
+            Button2.Text = "No, Click Me";
+            this.Controls.Add(Button2);
         }
     }
 }
