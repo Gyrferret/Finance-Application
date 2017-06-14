@@ -28,7 +28,7 @@ namespace WindowsExperiments
             Button1.Location = new Point(30, 30);
             Button1.Text = "Click Me";
             this.Controls.Add(Button1);
-            this.MouseClick += Mouse1_Click;
+            this.MouseClick += new MouseEventHandler(Mouse1_Click);
             Button1.Click += new EventHandler(Button1_Click);
         }
 
