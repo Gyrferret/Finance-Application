@@ -21,12 +21,11 @@ namespace Finance_Application
         public static void Main(string[] args)
         {
             WindowsExperiments.WindowsForms Window = new WindowsExperiments.WindowsForms();
-            Window.Windows();
+            Window.initialize();
         }
 
         static void RunFinanceApplication()
         {
-
             Processing Process = new Processing();
             Program Variables = new Program();
             PaymentInformation Information = new PaymentInformation();
