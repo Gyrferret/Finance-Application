@@ -12,8 +12,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
+            
             InitializeComponent();
         }
 
@@ -21,10 +23,13 @@ namespace WindowsFormsApp1
         {
 
         }
-
+        
         private void ShowPicture_Click(object sender, EventArgs e)
         {
-
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Load(openFileDialog1.FileName);
+            }
         }
 
         private void ClearPicture_Click(object sender, EventArgs e)

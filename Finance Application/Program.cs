@@ -18,6 +18,7 @@ namespace Finance_Application
         private float r = 3.95f;
         private double constant;
 
+        
         public static void Main(string[] args)
         {
             WindowsFormsApp1.Program.Main();

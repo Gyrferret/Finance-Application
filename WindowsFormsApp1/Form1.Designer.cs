@@ -41,6 +41,8 @@
             this.ClearPictureButton = new System.Windows.Forms.Button();
             this.SetBGColorButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -131,49 +133,56 @@
             this.checkBox1.Text = "Stretch";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // ShowPicture
+            // ShowPictureButton
             // 
             this.ShowPictureButton.AutoSize = true;
             this.ShowPictureButton.Location = new System.Drawing.Point(160, 332);
-            this.ShowPictureButton.Name = "ShowPicture";
+            this.ShowPictureButton.Name = "ShowPictureButton";
             this.ShowPictureButton.Size = new System.Drawing.Size(89, 23);
             this.ShowPictureButton.TabIndex = 8;
             this.ShowPictureButton.Text = "Show a Picture";
             this.ShowPictureButton.UseVisualStyleBackColor = true;
             this.ShowPictureButton.Click += new System.EventHandler(this.ShowPicture_Click);
             // 
-            // ClearPicture
+            // ClearPictureButton
             // 
             this.ClearPictureButton.AutoSize = true;
             this.ClearPictureButton.Location = new System.Drawing.Point(255, 332);
-            this.ClearPictureButton.Name = "ClearPicture";
+            this.ClearPictureButton.Name = "ClearPictureButton";
             this.ClearPictureButton.Size = new System.Drawing.Size(95, 23);
             this.ClearPictureButton.TabIndex = 9;
             this.ClearPictureButton.Text = "Clear the Picture";
             this.ClearPictureButton.UseVisualStyleBackColor = true;
             this.ClearPictureButton.Click += new System.EventHandler(this.ClearPicture_Click);
             // 
-            // SetBGColor
+            // SetBGColorButton
             // 
             this.SetBGColorButton.AutoSize = true;
             this.SetBGColorButton.Location = new System.Drawing.Point(356, 332);
-            this.SetBGColorButton.Name = "SetBGColor";
+            this.SetBGColorButton.Name = "SetBGColorButton";
             this.SetBGColorButton.Size = new System.Drawing.Size(142, 23);
             this.SetBGColorButton.TabIndex = 10;
             this.SetBGColorButton.Text = "Set the Background Color ";
             this.SetBGColorButton.UseVisualStyleBackColor = true;
             this.SetBGColorButton.Click += new System.EventHandler(this.SetBGColor_Click);
             // 
-            // Close
+            // CloseButton
             // 
             this.CloseButton.AutoSize = true;
             this.CloseButton.Location = new System.Drawing.Point(505, 332);
-            this.CloseButton.Name = "Close";
+            this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(75, 23);
             this.CloseButton.TabIndex = 11;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.Close_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
+    "s (*.*)|*.*  ";
+            this.openFileDialog1.Title = "Select a picture file";
             // 
             // Form1
             // 
@@ -215,6 +224,8 @@
         private System.Windows.Forms.Button ClearPictureButton;
         private System.Windows.Forms.Button SetBGColorButton;
         private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
