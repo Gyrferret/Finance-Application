@@ -20,8 +20,9 @@ namespace Finance_Application
 
         public static void Main(string[] args)
         {
-            WindowsExperiments.WindowsForms Window = new WindowsExperiments.WindowsForms();
-            Window.initialize();
+            WindowsFormsApp1.Program.Main();
+           // WindowsExperiments.WindowsForms Window = new WindowsExperiments.WindowsForms();
+            //Window.initialize();
         }
 
         static void RunFinanceApplication()
