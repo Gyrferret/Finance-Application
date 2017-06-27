@@ -21,8 +21,10 @@ namespace Finance_Application
         
         public static void Main(string[] args)
         {
-            WindowsFormsApp1.Program.Main();
-           // WindowsExperiments.WindowsForms Window = new WindowsExperiments.WindowsForms();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new WindowsFormsApp1.Form1());
+            // WindowsExperiments.WindowsForms Window = new WindowsExperiments.WindowsForms();
             //Window.initialize();
         }
 
