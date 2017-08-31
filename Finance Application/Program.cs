@@ -13,19 +13,15 @@ namespace Finance_Application
 {
     public class Program
     {
-        private int months = 36;
-        private float principal = 250000;
+        private int months = 360;
+        private float principal = 535000;
         private float r = 3.95f;
         private double constant;
 
         
         public static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WindowsFormsApp1.Form1());
-            // WindowsExperiments.WindowsForms Window = new WindowsExperiments.WindowsForms();
-            //Window.initialize();
+            RunFinanceApplication();
         }
 
         static void RunFinanceApplication()
@@ -46,7 +42,7 @@ namespace Finance_Application
         {
             for (int i = 0; i < (InformationArray.Length / 4); i++)
             {
-                Console.WriteLine("Total Due: {0:C2}, Paid to Interest: {1:C2}, Paid to Principal {2:C2}, End Balance: {3:C2}", InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3]);
+                Console.WriteLine("{4}.) Total Due: {0:C2}, Paid to Interest: {1:C2}, Paid to Principal {2:C2}, End Balance: {3:C2}", InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3],(i+1));
             }
         }
     }
@@ -55,14 +51,14 @@ namespace Finance_Application
     {
         public float CleanupInterestRate(float rate)
         {
-            return (rate / 100) + 1;
+            return (((rate / 100) /12) + 1);
         }
 
     }
 
     class Processing
     {
-        public double DetermineConstant(int months = 36, float principal = 250000, float r = 1.0395f)
+        public double DetermineConstant(int months = 360, float principal = 535000, float r = 1.0395f)
         {
             // used to determine the constant monthly payment given a principal, constant months of payment, and constant rate.
             double BaseValue = 1;
