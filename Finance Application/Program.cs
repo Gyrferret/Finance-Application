@@ -15,13 +15,29 @@ namespace Finance_Application
     {
         private int months = 360;
         private float principal = 535000;
-        private float r = 3.95f;
+        private float r = 3.75f;
         private double constant;
 
         
-        public static void Main(string[] args)
+        public static void Main(float[] args)
         {
+            if (args.Length != 0)
+            {
+               // RunFinanceApplicationArguments(args[0],args[1],args[2])  
+            }
             RunFinanceApplication();
+        }
+
+        static void RunFinanceApplicationArguments( int months, float principal, float r)
+        {
+            Processing Process = new Processing();
+            PaymentInformation Information = new PaymentInformation();
+            Cleanup CleanupRate = new Cleanup();
+            float rate = CleanupRate.CleanupInterestRate(r);
+            double constant = Process.DetermineConstant(months, principal, rate);
+            double[,] Array = Information.MonthlyPayments(months, constant, principal, rate);
+            InformationOutput(Array);
+            Console.ReadLine();
         }
 
         static void RunFinanceApplication()
