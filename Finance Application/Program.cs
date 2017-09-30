@@ -63,6 +63,26 @@ namespace Finance_Application
         }
     }
 
+    class DataOutput
+    {
+        public static System.Data.DataTable newDataTable(double[,] InformationArray)
+        {
+            System.Data.DataTable myTable = new System.Data.DataTable();
+
+            myTable.Columns.Add("Month");
+            myTable.Columns.Add("Paid to Interest");
+            myTable.Columns.Add("Paid to Principal");
+            myTable.Columns.Add("End Balance");
+
+            for (int i = 0; i < (InformationArray.Length / 4) ; i++)
+            {
+                myTable.Rows.Add(InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3], (i + 1));
+            }
+
+            return myTable;
+        } 
+    }
+
     class Cleanup
     {
         public float CleanupInterestRate(float rate)
