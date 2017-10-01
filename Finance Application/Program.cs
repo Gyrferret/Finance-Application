@@ -18,17 +18,17 @@ namespace Finance_Application
         private float r = 3.75f;
         private double constant;
 
-        
+
         public static void Main(float[] args)
         {
             if (args.Length != 0)
             {
-               // RunFinanceApplicationArguments(args[0],args[1],args[2])  
+                // RunFinanceApplicationArguments(args[0],args[1],args[2])  
             }
             RunFinanceApplication();
         }
 
-        static void RunFinanceApplicationArguments( int months, float principal, float r)
+        static void RunFinanceApplicationArguments(int months, float principal, float r)
         {
             Processing Process = new Processing();
             PaymentInformation Information = new PaymentInformation();
@@ -58,7 +58,7 @@ namespace Finance_Application
         {
             for (int i = 0; i < (InformationArray.Length / 4); i++)
             {
-                Console.WriteLine("{4}.) Total Due: {0:C2}, Paid to Interest: {1:C2}, Paid to Principal {2:C2}, End Balance: {3:C2}", InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3],(i+1));
+                Console.WriteLine("{4}.) Total Due: {0:C2}, Paid to Interest: {1:C2}, Paid to Principal {2:C2}, End Balance: {3:C2}", InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3], (i + 1));
             }
         }
     }
@@ -74,14 +74,15 @@ namespace Finance_Application
             myTable.Columns.Add("Paid to Principal");
             myTable.Columns.Add("End Balance");
 
-            for (int i = 0; i < (InformationArray.Length / 4) ; i++)
+            for (int i = 0; i < (InformationArray.Length / 4); i++)
             {
                 myTable.Rows.Add(InformationArray[i, 0], InformationArray[i, 1], InformationArray[i, 2], InformationArray[i, 3], (i + 1));
             }
 
             return myTable;
-        } 
+        }
     }
+
 
     class Cleanup
     {
