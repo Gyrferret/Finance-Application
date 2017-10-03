@@ -20,7 +20,13 @@ namespace WindowsFormsApplication1
 
         private void DataDisplay_Load (object sender, EventArgs e)
         {
-            System.Data.DataTable dt = 
+            LoadPaymentsGridView();
         }
+
+        private void LoadPaymentsGridView()
+        {
+
+        }
+
     }
 }
